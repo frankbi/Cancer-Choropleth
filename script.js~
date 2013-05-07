@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	window.onload = function() { Tabletop.init( { key: spreadsheet_url, callback: showInfo } ); }	
-	initMap(combined, "b");
+	initMap(combined);
 });
 
 function showInfo(data) {
@@ -223,10 +223,10 @@ function changeColor(cancer, colormapping) {
 }
 
 var initcolor = d3.scale.quantile()
-		.domain([400,580])
-		.range(colorbrewer.YlGnBu[9]);
+		.domain([410.6,528])
+		.range(colorbrewer.YlGn[8]);
 
-function initMap(x, colormapping) {
+function initMap(x) {
 	d3.json("mn-county-2010.json", function(json) {
 		var features = json.features;
 		var j = -1
@@ -247,7 +247,6 @@ function initMap(x, colormapping) {
 		    .attr("stroke","white")
 		    .attr("stroke-width","2")
 		    .on("click", click);
-		    // changeColor(x, colormapping);
 	});
 }
 
@@ -255,7 +254,6 @@ function click(d) {
 	var id = $(this).attr("id");
 	id = id.replace("path","");
 	var numId = parseInt(id) + 1;
-	// console.log(lungandbronchus[numId].incidencerateper100000);
 	$(".dis").remove();
 	document.getElementById("county").innerHTML = d.properties.NAME + " County";
 	document.getElementById("acutemyeloidleukemia").innerHTML = "Acute Myeloid Leukemia: <b>" + co(acutemyeloidleukemia[numId].numberofnewcancers) + "</b>";
@@ -283,6 +281,9 @@ function checkForm() {
 	var mapping = document.getElementById("mapping").value;
 	if (cancer == false || mapping == false) { alert("Please select from both drop-down menus."); }
 	switch(cancer) {
+		case "combined":
+			changeColor(combined,mapping);
+			break;
 		case "thyroid":
 			changeColor(thyroid,mapping);
 			break;
@@ -413,15 +414,3 @@ Array.min = function( array ){
 function co(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-	
-	
-/*
-	ISSUES:
-	- Data is loaded last so technically there's no data to show when
-	the page first loads. Figure this shit out. 
-	- Scroll bar below map that matches with JSON data.
-	- Reset to original "ALL MINNESOTA" map.
-	
-	REMINDER:
-	- Cancer arrays start at 1 because 0 is all of Minnesota.
-*/
