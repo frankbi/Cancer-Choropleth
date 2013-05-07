@@ -1,0 +1,22 @@
+		#leftwrapper {
+			float:left;
+		}
+		
+			#map {
+				background-color:lightgray;
+				display:inline-block;
+			}
+			
+			#total {
+				width:600px;
+				height:60px;
+				display:block;
+				background-color:grey;
+			}
+			
+		#sidebar {
+			width:300px;
+			height:710px;
+			display:inline-table;
+			background-color:grey;
+		}
