@@ -43,10 +43,6 @@ function changeColor(cancer, colormapping) {
 			switch(colormapping) {
 			case "YlGn":
 				var color = d3.scale.quantile().domain([minimum,maximum]).range(colorbrewer.YlGn[8]);
-				
-				//colorbrewer['YlGn'[8]]
-				//var f = 'YlGn';
-				//colorbewer.
 				var c = cancer[count].incidencerateper100000;
 				count++;						
 				return color(c);

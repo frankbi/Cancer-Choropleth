@@ -1,0 +1,61 @@
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+#states {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+#states .active {
+  fill: orange;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+#map {
+  background-color: none;
+  width:510px;
+  height:800px;
+  float:left;
+}
+
+#info {
+  width:800px;
+  height:500px;
+  float:left;
+  display:inline-table;
+}
+
+#descrip {
+	margin-top:-15px;
+}
+
+.totalheader {
+	display:inline-table;
+	margin-right:190px;
+}
+
+path:hover {
+	opacity:0.5;
+}
+
+
+button, select, option {
+	height:25px;
+	background-color:white;
+	border:1px solid black;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+
+
+#totally {
+	margin-left:10px;
+	margin-bottom:30px;
+	font-weight:bold;
+	font-size:23;
+	width:100%;
+}
