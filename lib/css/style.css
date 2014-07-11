@@ -1,0 +1,37 @@
+p, h1 {
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+path:hover {
+	opacity:0.7;
+}
+.wrapper {
+	float:left;
+}
+#map {
+	display:inline-block;
+}
+#states .active {
+	fill:orange;
+}
+#sidebar {
+	width:625px;
+	height:150px;
+	padding-left:20px;
+	display:inline-table;
+}
+#infobox {
+	width:625px;
+	height:600px;
+	padding-left:20px;
+	margin-top:-20px;
+}
+p#county {
+	font-weight:bold;
+	font-size:25px;
+}
+.col {
+	width:295px;
+	height:425px;
+	float:left;
+	font-size:18px;
+}
